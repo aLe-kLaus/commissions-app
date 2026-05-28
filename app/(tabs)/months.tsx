@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useSales } from '../../src/hooks/useSales';
-import { projectionsByMonth, currentMonth } from '../../src/lib/commission';
+import { projectionsByMonth } from '../../src/lib/commission';
 import { MonthSummaryCard } from '../../src/components/MonthSummaryCard';
 import { EmptyState } from '../../src/components/EmptyState';
 import { colors, spacing } from '../../src/theme';
@@ -12,13 +12,7 @@ import { t } from '../../src/strings';
 export default function MonthsScreen() {
   const { sales, loading } = useSales();
 
-  const projections = useMemo(() => {
-    const result = projectionsByMonth(sales);
-    const now = currentMonth();
-    const future = result.filter((p) => p.month >= now);
-    const past = [...result.filter((p) => p.month < now)].reverse();
-    return [...future, ...past];
-  }, [sales]);
+  const projections = useMemo(() => projectionsByMonth(sales), [sales]);
 
   if (loading) {
     return (
