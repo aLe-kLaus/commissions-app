@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Comissões",
+    "slug": "comissoes",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "comissoes",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.aleklaus.comissoes",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#111625"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

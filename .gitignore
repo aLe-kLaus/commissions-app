@@ -1,0 +1,31 @@
+node_modules/
+.expo/
+dist/
+web-build/
+.context/
+
+# OS
+.DS_Store
+*.log
+
+# Native
+ios/
+android/
+
+# Env
+.env*
+!.env.example
+
+# Build outputs
+*.apk
+*.aab
+*.ipa
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Local
+expo-env.d.ts
